@@ -9,6 +9,7 @@ from flask_pymongo import PyMongo
 import os
 from dotenv import load_dotenv
 import datetime
+import pymongo
 
 import model
 
@@ -67,10 +68,13 @@ def users_add():
         return redirect(url_for('users_view'))
 
 @app.route('/books')
-def books_view():
+
+def books_view(genre):
     data = {
-    'books':mongo.db.books.find({}),
+    'books':mongo.db.books.find({'genre':genre})
     }
+    for books in data:
+        print(books)
     return render_template('booksView.html', data=data)
 
 @app.route('/books/<title>')

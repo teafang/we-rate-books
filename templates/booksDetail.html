@@ -6,14 +6,15 @@
 
 <div class="container">
   <div class="row">
-    {{data.book.title}}
-    {{data.book.author}}
-
+    <h1>{{data.book.title}} by {{data.book.author}}<h1>
+    <br>
+    <div>
     {% for review in data.reviews %}
-      {{review.user}}
-      {{review.rating}}
-      {{review.review}}
+      <p class="font-weight-light">User: {{review.user}}</p>
+      <p class="font-weight-light">Rating: {{review.rating}}</p>
+      <p class="font-weight-light">Review: {{review.review}}</p>
     {% endfor %}
+    </div>
   </div>
 </div>
 

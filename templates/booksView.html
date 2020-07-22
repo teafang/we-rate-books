@@ -4,15 +4,21 @@
 
 {% block content%}
 
-<div class="container">
-  <h1>Books</h1>
-  <div class="row">
+<div class="jumbotron">
+    <div class="display-4">
+    <h1>Books</h1>
+    <hr class="my-4">
+    </div>
+</div>
+
+<div class="card">
     {% for book in data.books %}
-    {{book.title}}
-    {{book.author}}
-    <a href="{{url_for('books_detail', title=book.title)}}">Details</a>
+    <div class="card-body">
+        {{book.title}} by
+        {{book.author}}
+        <a href="{{url_for('books_detail', title=book.title)}}">Details</a>
+    </div>
     {% endfor %}
-  </div>
 </div>
 
 {% endblock %}

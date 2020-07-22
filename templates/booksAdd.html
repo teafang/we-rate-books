@@ -4,8 +4,9 @@
 
 {% block content%}
 
-<div class="container">
-  <h1>Add a New Book</h1>
+<div class="jumbotron">
+  <h1 class="display-4" style="font-family:‘Lexend Zetta’, sans-serif">Add a New Book</h1>
+  <hr class="my-4">
   <div class="col">
     <form method="POST" action="{{url_for('books_add')}}">
       <div class="form-row">
@@ -28,7 +29,7 @@
           </select>
         </div>
 
-        <div class="form-group col-12">
+        <div class="btn btn-primary btn-md col-12">
           <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </div>
 
